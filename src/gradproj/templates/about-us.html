@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>Study Compass</title>
+<!--  <link rel="stylesheet" href="{% static 'gradproj/about-main.css' %}"  >-->
+        <link rel="stylesheet" href="{% static 'gradproj/about-nav33.css' %}"  >
+
+<!--    <link rel="stylesheet" href="{% static 'gradproj/about-us-css.css' %}" >-->
+  </head>
+  <body>
+ <div class="box-area">
+    <header>
+        <div class="wrapper">
+            <div class="logo">
+                <a href="http://127.0.0.1:8000/">Study Compass</a>
+            </div>
+            <nav>
+                {% if user.is_authenticated %}
+                <a href="/questions/">Questionnaire</a>
+                {% endif %}
+
+                <a href="/tree/">Tree</a>
+                <a href="/faq/">FAQ</a>
+                {% if user.is_authenticated %}
+
+                <a> welcome </a>
+                <a class="nav-link" href="/logout">Logout</a>
+
+
+                {% else %}
+
+
+                <a href="/sign-in/">Sign In</a>
+                <a href="/sign-up/">Sign Up</a>
+
+                {% endif %}
+
+
+            </nav>
+        </div>
+    </header>
+
+
+      
+   
+
+
+          <img src="{% static 'gradproj/images/aboutus2.png' %}"alt="Paris" class="center">
+
+
+            <div class="about-section">
+               <h1>About Us</h1><br>
+              <p>We’re a group of students from the Hashemite University.
+              We developed this website as a reliable interactive educational tool for assisting students in
+               choosing the right courses based on their own performance in the freshman year of computer science.</p>
+            </div>
+
+         <div class="about-section" style="margin-top: 1cm ;">
+            <br>
+            <details><summary>Why do we need Study Compass? </summary> <br><p>Study Compass is a reliable interactive educational tool for assisting students in choosing the right courses based on their own performance in the freshman year of computer science. </p> <br> </details>
+            <br><details><summary>What is ABET? </summary> <br><p>Nonprofit, ISO 9001 certified organization that accredits college and university programs in applied and natural science, computing, engineering and engineering technology.</p> <br> <br> </details>
+          <br><details><summary>What are the learning outcomes of Computer Science according to ABET? </summary> <br><p> Analyze a complex computing problem, design, implement, and evaluate a computing program, communicate effectively in a variety of professional contexts, recognize professional responsibilities and make informed judgments in computing practice and function effectively as a member or leader </p> <br> </details>
+         <br> <details><summary>How Study Compass works? </summary> <br><p>Study Compass was developed over machine learning techniques for recommending the courses to be taken in the curriculum based on a questionnaire filled by a student, in addition to helpful resources and links that cover the material of courses. The questionnaire was built according to ABET learning outcomes related to Computer Science.</p> <br> </details>
+          <br><details><summary>What is the curriculum tree shown by Study Compass? </summary><br><p> Study Compass demonstrates a tree that represents the different courses in the curriculum of Computer Science in a hierarchical format according to the years in which these courses can be taken. Study Compass ranks these courses from "Strongly recommended" to "Weakly recommended". The color of each clickable course in the tree shows how it has been ranked.</p></details>
+            </div>
+
+              <br>
+                <h1 style="text-align:center; color:#4AB4DE;">Our Team</h1>
+              <div class="space">
+                <br>
+                <div class="row">
+
+                  <div class="column">
+                     <div class="card">
+                      <img src="{% static 'gradproj/images/njd.jpg' %}" alt="Ahmad AlNjada" style="width:100% ;height: 100%;">
+                        <div class="container">
+                          <br>
+                            <h2>Ahmad AlNjada</h2> <br>
+                            <p>(Team Leader)</p>
+                              <p>ahmadnajada1233@gmail.com</p>
+                              <br>
+                          </div>
+                          <br>
+                      </div>
+                  </div>
+                    <div class="column">
+                          <div class="card">
+                           <img src="{% static 'gradproj/images/Mahmoud.jpg' %}" alt="Mahmoud Arab" style="width:100% ;height: 100%;">
+                            <div class="container"> <br>
+                              <h2>Mahmoud Arab</h2><br>
+                             <p> abuaraba2000@gmail.com </p> <br>
+                            </div>
+                            </div>
+                        </div>
+                    <div class="column">
+                          <div class="card">
+                           <img src="{% static 'gradproj/images/abushanab.jpg' %}" alt="Ahmad Abushanab" style="width:100% ;height: 100%;">
+                            <div class="container"> <br>
+                              <h2>Ahmad AbuShanab</h2><br>
+                             <p> abushanab323@gmail.com </p> <br>
+                            </div>
+                            </div>
+                        </div>
+                </div>
+              </div>
+       </div>
+
+              <br>
+                <h1 style="text-align:center; color:#4AB4DE;">Give us your feedback about Study Compass</h1>
+   <div class="container-">
+  <form method="post">
+      {% csrf_token %}
+
+    <label for="fname">NAME  </label>
+     {% if user.is_authenticated %}
+    <input type="text" id="fname" name="firstname" placeholder="Your name.." value="{{request.user}}">
+      {% else %}
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      {% endif %}
+    </select>
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
+
+
+  </body>
+</html>

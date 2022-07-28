@@ -1,0 +1,75 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url(images/back.jpg);
+    background-size: cover;
+    background-position: center 0px;
+}
+
+.sign_up_form
+{
+    
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+    
+    padding: 20px;
+    
+    text-align: center;
+    
+}
+
+.all
+{
+    background: rgba(255, 255, 255, 0.644);
+    width: 300px;
+    margin: 9% auto 0; 
+}
+
+.sign_up_form h1
+{
+    color: #4AB4DE;
+    margin-bottom: 30px;
+}
+
+.input_box
+{
+    border-radius: 20px;
+    font-size: 12px;
+    padding: 12px 0 10px 10px;
+    margin: 10px -4px;
+    width: 100%;
+    border: 1px solid #4AB4DE;
+    outline: none;
+
+}
+
+button
+{
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn-primary
+{
+    background-color: #4AB4DE;
+}
+
+.btn-primary:hover
+{
+    background-color: #3B8AC3;
+}
+
+.btn-primary:active{
+    background-color: #345EA8;
+}
+
+
+
